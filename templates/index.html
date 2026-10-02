@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EduGenie — AI Learning Assistant</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <main class="app-shell">
+    <header class="hero">
+      <div>
+        <p class="eyebrow">AI LEARNING ASSISTANT</p>
+        <h1>Edu<span>Genie</span></h1>
+        <p class="subtitle">Ask, understand, practice, summarize, and build your learning path.</p>
+      </div>
+      <div class="status" id="status">Checking AI…</div>
+    </header>
+
+    <section class="workspace">
+      <div class="panel controls">
+        <label for="task">Choose a task</label>
+        <select id="task">
+          <option value="qa">Ask a Question</option>
+          <option value="explain">Explain a Topic</option>
+          <option value="quiz">Generate Quiz</option>
+          <option value="summarize">Summarize</option>
+          <option value="learn">Learning Path</option>
+        </select>
+
+        <label for="level" id="levelLabel" class="hidden">Learning level</label>
+        <select id="level" class="hidden">
+          <option>Beginner</option>
+          <option>Intermediate</option>
+          <option>Advanced</option>
+        </select>
+
+        <label for="inputText" id="inputLabel">Your question</label>
+        <textarea id="inputText" placeholder="Example: Which is the largest ocean?"></textarea>
+
+        <button id="runBtn">Generate Answer</button>
+        <p class="hint">Your Gemini API key stays on your server in <code>.env</code>.</p>
+      </div>
+
+      <div class="panel result-panel">
+        <div class="result-head">
+          <h2>Result</h2>
+          <button id="copyBtn" class="secondary">Copy</button>
+        </div>
+        <div id="result" class="result empty">Your result will appear here.</div>
+      </div>
+    </section>
+
+    <footer>EduGenie • FastAPI + Google Gemini</footer>
+  </main>
+  <script src="/static/app.js"></script>
+</body>
+</html>
